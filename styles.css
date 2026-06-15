@@ -92,7 +92,7 @@ input {
   left: 0;
   top: 0;
   will-change: transform;
-  transform-origin: bottom center
+  transform-origin: bottom center;
 }
 
 .slide img {
@@ -175,4 +175,53 @@ input {
   font-size: 0.8rem;
   color: #111;
   text-decoration: none;
+}
+
+@media (max-width: 768px) {
+  .hero {
+    top: 2.5rem;
+    left: 1.5rem;
+    right: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .hero-title h1 {
+    font-size: clamp(2rem, 10vw, 3.5rem);
+    line-height: 1;
+  }
+
+  .hero-description {
+    max-width: none;
+    gap: 0.75rem;
+  }
+
+  .hero-description p {
+    font-size: 0.8rem;
+    line-height: 1.6;
+  }
+
+  .hero-description span {
+    font-size: 0.7rem;
+  }
+
+  .hero-meta {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+  }
+
+  .hero-meta div {
+    gap: 0.5rem;
+  }
+
+  .label {
+    font-size: 0.6rem;
+  }
+
+  .hero-meta li,
+  .hero-meta a {
+    font-size: 0.75rem;
+  }
 }

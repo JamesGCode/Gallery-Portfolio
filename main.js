@@ -111,7 +111,7 @@ function render() {
        scale(1, ${scaleY})`;
 
     // Un poco menos opacas las lejanas
-    slides[i].style.opacity = 1 - progress * 0.3;
+    slides[i].style.opacity = 1 - progress * 0.4;
   }
 
   requestAnimationFrame(render);

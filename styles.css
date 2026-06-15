@@ -6,6 +6,33 @@
   font-display: swap;
 }
 
+@font-face {
+  font-family: "Google Sans Flex";
+  src: url("./assets/fonts/googleSansFlex/GoogleSansFlex_9pt-Regular.ttf")
+    format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Google Sans Flex";
+  src: url("./assets/fonts/googleSansFlex/GoogleSansFlex_9pt-Medium.ttf")
+    format("truetype");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Google Sans Flex";
+  src: url("./assets/fonts/googleSansFlex/GoogleSansFlex_9pt-SemiBold.ttf")
+    format("truetype");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -14,13 +41,12 @@
 }
 
 body {
-  background: #dedede;
   overflow: hidden;
 }
 
 h1 {
   width: 50%;
-  text-align: center;
+  text-align: start;
   font-family: "Boldonse";
   font-size: clamp(3rem, 4vw, 5rem);
   font-weight: 500;
@@ -28,6 +54,26 @@ h1 {
   line-height: 1.5;
 }
 
+p,
+span,
+li,
+a {
+  font-family: "Google Sans Flex", sans-serif;
+  font-weight: 400;
+}
+
+strong {
+  font-weight: 600;
+}
+
+button,
+label,
+input {
+  font-family: "Google Sans Flex", sans-serif;
+  font-weight: 500;
+}
+
+/* Slider */
 .slider {
   position: relative;
   width: 100%;
@@ -45,10 +91,8 @@ h1 {
   position: absolute;
   left: 0;
   top: 0;
-
-  transform-origin: bottom center;
-
   will-change: transform;
+  transform-origin: bottom center
 }
 
 .slide img {
@@ -62,8 +106,76 @@ h1 {
   pointer-events: none;
 }
 
-.slider-header {
+/* Hero info */
+.hero {
+  position: absolute;
+  top: 2rem;
+  left: 2rem;
+  right: 2rem;
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+  gap: 4rem;
+  z-index: 100;
+}
+
+.hero-title h1 {
+  width: auto;
+  font-family: "Boldonse";
+  font-size: clamp(3rem, 5vw, 6rem);
+  line-height: 1;
+  letter-spacing: -0.03em;
+}
+
+.hero-description {
   display: flex;
-  justify-content: center;
-  align-items: center;
+  flex-direction: column;
+  gap: 1.5rem;
+  max-width: 500px;
+}
+
+.hero-description p {
+  font-size: 0.9rem;
+  line-height: 1.7;
+  color: #444;
+}
+
+.hero-description span {
+  font-size: 0.75rem;
+  color: #777;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.hero-meta {
+  grid-column: 2;
+  display: flex;
+  gap: 4rem;
+}
+
+.hero-meta div {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.label {
+  font-size: 0.65rem;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #999;
+}
+
+.hero-meta ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.hero-meta li,
+.hero-meta a {
+  font-size: 0.8rem;
+  color: #111;
+  text-decoration: none;
 }

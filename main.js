@@ -1,3 +1,5 @@
+import { playIntro } from "./scripts/introAnimation.js";
+
 const slider = document.querySelector(".slider");
 
 const config = {
@@ -95,19 +97,16 @@ function render() {
 
     const eased = progress * progress;
 
-    const scaleY =
-      maxScale - (maxScale - minScale) * eased;
+    const scaleY = maxScale - (maxScale - minScale) * eased;
 
-    const left =
-      centerX + x - config.slideWidth / 2;
+    const left = centerX + x - config.slideWidth / 2;
 
     slides[i].style.zIndex = Math.round((1 - progress) * 100);
 
     // Mantener ancho fijo y reducir solo altura
     slides[i].style.transformOrigin = "bottom center";
 
-    slides[i].style.transform =
-      `translate3d(${left}px, ${top}px, 0)
+    slides[i].style.transform = `translate3d(${left}px, ${top}px, 0)
        scale(1, ${scaleY})`;
 
     // Un poco menos opacas las lejanas
@@ -118,3 +117,8 @@ function render() {
 }
 
 render();
+
+(async () => {
+  await playIntro(slides, config);
+  render();
+})();

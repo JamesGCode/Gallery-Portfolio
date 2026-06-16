@@ -116,8 +116,6 @@ function render() {
   requestAnimationFrame(render);
 }
 
-render();
-
 (async () => {
   await playIntro(slides, config);
   render();
